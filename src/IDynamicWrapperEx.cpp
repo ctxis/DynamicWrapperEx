@@ -92,7 +92,8 @@ HRESULT STDMETHODCALLTYPE IDynamicWrapperEx::GetTypeInfo(
 	_In_  LCID lcid,
 	_Out_ ITypeInfo** ppTInfo
 ) {
-	*ppTInfo = NULL;
+	if (ppTInfo != NULL)
+		*ppTInfo = NULL;
 	return S_OK;
 }
 

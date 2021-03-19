@@ -54,6 +54,8 @@ HRESULT STDMETHODCALLTYPE DynamicMethod::Invoke(
 	// Parse parameters
 	for (WORD cx = 0; cx < pDispParams->cArgs; cx++) {
 
+               	args[pDispParams->cArgs - cx - 1].dwFlag = ARGUMENT_STD;
+
 		switch (pDispParams->rgvarg[cx].vt) {
 			// non-scalar value
 		case VT_R4:

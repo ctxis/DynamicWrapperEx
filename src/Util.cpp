@@ -34,10 +34,10 @@ HRESULT STDMETHODCALLTYPE Util::WriteByte(
 
     BYTE bValue = V_UI1(&pDispParams->rgvarg[2]);
     PBYTE lpAddress = (PBYTE)V_UI8(&pDispParams->rgvarg[1]);
-    WORD wOffset = V_I4(&pDispParams->rgvarg[0]);
+    DWORD dwOffset = V_I4(&pDispParams->rgvarg[0]);
 
     // Write byte
-    *(lpAddress + wOffset) = bValue;
+    *(lpAddress + dwOffset) = bValue;
 
     if (pVarResult != NULL) {
         V_VT(pVarResult) = VT_BOOL;
